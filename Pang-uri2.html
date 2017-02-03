@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-6">
+	<title>Exercises</title>
+
+<link rel="stylesheet" type="text/css" href="pagsasanay2.css">
+</head>
+<body background="panguribg.jpg">
+<div id="container">
+	<div id="title">
+	<img src="balarila.png">
+	<a href="exercises.html"><button>Mga Pagsasanay</button></a>
+		<a href="001index.html"><button>Home </button></a>
+		
+	</div><div>
+	<script type="text/javascript">
+		function disp(question){
+
+			switch(question){
+				case 'question2':
+					var choices = document.getElementsByName('question2');
+					for(var i=0, length = choices.length; i < length; i++){
+						if(choices[i].checked){
+									var currentScore = localStorage.getItem('examTypeB');
+
+					        if(choices[i].value == 'Mabait'){
+								var audio = new Audio('happy2.mp3');
+				audio.play();
+				localStorage.setItem('examTypeB', parseInt(currentScore) + 1 );
+				document.getElementById('answer2').innerHTML = '<table><tr><td>Resulta:</d></tr><tr><td> <img src="picture02.png" class="img2"></td></tr><tr><td>Tama ang iyong sagot! Ang tamang sagoy ay mabait dahil walang ibang bagay o tao na inihambing o kinumpara sa bunso mong kapatid.</td></tr><tr><td><a href="Pang-uri3.html"><img src="next.png" class="img3" align="right"></input></a></td></tr></table><br>';
+								break;
+							}else{
+								var audio = new Audio('sad2.mp3');
+				audio.play();
+								localStorage.setItem('examTypeB', currentScore);
+								
+				document.getElementById('answer2').innerHTML = '<table><tr><td>Resulta:</d></tr><tr><td> <img src="picture13.png" class="img2"></td></tr><tr><td> Mali ang iyong sagot.</td></tr><tr><td><a href="Pang-uri2m.html"><input type="button" class="button1" value="Alamin ang tamang sagot" width=300px></a></td></tr></table> <br />';
+
+							}
+						}
+
+
+					}
+
+					break;
+
+					/*
+					class = document.getElementsByClassName()
+					name = document.getElementsByName()
+					id = document.getElementById()
+					*/
+
+			}
+		}
+	</script>
+
+<div class="header">
+Klasipikasyon ng Pang-uri
+</div>
+<div class="question">
+
+ <div class="text">
+<P> ________ ang aking bunsong kapatid  <br> Alin sa mga sumusunod ang wastong pang-uri na gagamitin?</font><BR>
+<input type="radio" name="question2" value="Mabait">Mabait</font><BR>
+<input type="radio" name="question2" value="Higit na mabait">Higit na mabait</font><BR>
+<input type="radio" name="question2" value="Pinakamabait">Pinakamabait</font><BR>
+</p>
+</div><center>
+<p><input type="button" class="button"value="Ipasa" onclick="disp('question2')"></p>
+<p style='height: 200px; width: 400px; border: solid 0px black' id="answer2"></p>
+<p>
+</p>
+</div>
+</body>
+</html>

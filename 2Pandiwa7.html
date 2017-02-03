@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-6">
+	<title>Exercises</title>
+
+<link rel="stylesheet" type="text/css" href="pagsasanay4.css">
+</head>
+<body background="pandiwabg.jpg">
+<div id="container">
+	<div id="title">
+	<img src="balarila.png">
+	<a href="exercises.html"><button>Mga Pagsasanay</button></a>
+		<a href="001index.html"><button>Home </button></a>
+		
+	</div>
+		<div>
+	<script type="text/javascript">
+function verify(){
+		
+
+			// check for question 1
+			var answer1 = document.getElementById('question1').value;
+			
+			var answer = document.getElementById('answer');
+			var results = '';
+			var currentScore = localStorage.getItem('examTypeL');
+			if(answer1 == 'Binubuksan'){ 
+				var audio = new Audio('happy2.mp3');
+				audio.play();
+				localStorage.setItem('examTypeL', parseInt(currentScore) + 1 );
+				document.getElementById('question1');
+								results += '<table><tr><td>Resulta:</td></tr><tr><td><img src="picture02.png" class="img2"></td></tr><tr><td>Tama ang iyong sagot! Ang tamang sagot ay <u>binubuksan</u> dahil ang pangungusap ay nasa pangkasalukuyan na aspekto. </td></tr><tr><td> <a href="2Pandiwa8.html"><img src="next.png" class="img3" align="center"></input></a></td></tr></table><br/>';
+			}else if(answer1 == 'binuksan'){
+				var audio = new Audio('sad2.mp3');
+				audio.play();
+				localStorage.setItem('examTypeL', currentScore);
+				document.getElementById('question1');
+				results += '<table><tr><td>Resulta:</td></tr><tr><td><img src="picture13.png" class="img2"></td></tr><tr><td> Mali. Dapat nasa malaking titik ang unang letra ng iyong sagot dahil ito ay ang unang salita sa </td></tr><tr><td> <a href="2Pandiwa8.html"><img src="next.png" class="img3" align="center"></input></a></td></tr></table> <br /> ';
+			}else if(answer1 != 'binubuksan' || 'Binubuksan'){
+				var audio = new Audio('sad2.mp3');
+				audio.play();
+				localStorage.setItem('examTypeL', currentScore);
+				document.getElementById('question1');
+			results += '<table><tr><td>Resulta:</td></tr><tr><td><img src="picture13.png" class="img2"></td></tr><tr><td> Mali ang iyong sagot. </td></tr><tr><td><a href="2Pandiwa7m.html"><input type="button" class="button1" value="Alamin ang tamang sagot" width=300px></a></td></tr></table> <br /> ';
+}
+			answer.innerHTML = results;
+			}
+		
+	</script><div class="header">
+Pagbabanghay ng Pandiwa
+</div>
+<div class="question">
+<P><font size="5"><center>(buksan)<br> <input type="textbox" id="question1"> ko na ngayon ang mga bintana.
+<p><input type="button" class="button"value="Ipasa" onclick="verify()"></p>
+<p style='height: 150px; width: 500px; border: solid 0px black' id="answer"></p>
+<p>
+</p></div>
+</body>
+</html>

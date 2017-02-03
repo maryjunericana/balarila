@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-6">
+	<title>Exercises</title>
+
+<link rel="stylesheet" type="text/css" href="pagsasanay4.css">
+</head>
+<body background="pandiwabg.jpg">
+<div id="container">
+	<div id="title">
+	<img src="balarila.png">
+	<a href="exercises.html"><button>Mga Pagsasanay</button></a>
+		<a href="001index.html"><button>Home </button></a>
+		
+	</div>
+		<div>
+	<script type="text/javascript">
+		
+		function verify(){
+		
+			
+			// check for question 1
+			var answer1 = document.getElementById('question1').value;
+			
+			var answer = document.getElementById('answer');
+			var results = '';
+			
+			var currentScore = localStorage.getItem('examTypeA');
+			
+			if(answer1 == 'Kumakain'){ 
+				var audio = new Audio('happy2.mp3');
+				audio.play();
+				
+				localStorage.setItem('examTypeA', parseInt(currentScore) + 1 );
+				' '
+				document.getElementById('question1');
+				results += '<table><tr><td>Resulta:</tr></td><tr><td><img src="picture02.png" class="img2"></td></tr><tr><td>Tama ang iyong sagot!</td></tr><tr><td><a href="1Pandiwa3.html"><img src="next.png" class="img3" align="center"></input></td></tr></table><br>'
+			}else if(answer1 == 'kumakain'){
+				 var audio = new Audio('sad2.mp3');
+				audio.play();			
+				
+				localStorage.setItem('examTypeA', currentScore);
+				
+				 document.getElementById('question1');
+				results += '<table><tr><td>Resulta:</tr></td><tr><td><img src="picture13.png" class="img2"></td></tr><tr><td>  Mali. Dapat nasa malaking titik ang unang letra ng iyong sagot dahil ito ay ang unang salita sa pangungusap.</td></tr><tr><td><a href="1Pandiwa3.html"><img src="next.png" class="img3" align="center"></input></td></tr></table> <br /> ';
+			}else if (answer1 != 'Kumakain'||'kumakain'){
+				var audio = new Audio('sad2.mp3');
+				audio.play();			
+				
+				localStorage.setItem('examTypeA', currentScore);
+				
+				document.getElementById('question1');
+				results += '<table><tr><td>Resulta:</td></tr><tr><td><img src="picture13.png" class="img2"></td></tr><tr><td> Mali ang iyong sagot. </td></tr><tr><td><a href="1Pandiwa2m.html"><input type="button" class="button1" value="Alamin ang tamang sagot" width=300px></a></td></tr></table> <br /> ';
+			}
+			console.log('currentScore'+localStorage.getItem('examTypeA') );
+			answer.innerHTML = results;
+			'</font>'
+			}
+	</script>
+<div class="header">
+Pagtukoy sa Pandiwa
+</div>
+<div class="question">
+ <P><center> Kumakain ng almusal si Ate Martha. <br></font> <input type="textbox" id="question1">
+</p>
+<p><input type="button" class="button" value="Ipasa" onclick="verify()"></p>
+<p style='height: 100px; width: 700px; border: solid 0px black' id="answer"></p>
+
+<p>
+</p>
+</table>
+</div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-6">
+	<title>Exercises</title>
+
+<link rel="stylesheet" type="text/css" href="pagsasanay5.css">
+</head>
+<body background="panguribg.jpg">
+<div id="container">
+	<div id="title">
+	<img src="balarila.png">
+	<a href="exercises.html"><button>Mga Pagsasanay</button></a>
+		<a href="001index.html"><button>Home </button></a>
+		
+	</div>
+
+<center>
+<div class="header">
+Pagtukoy sa Pang-uri
+</div>
+<div class="question">
+<br><center>
+<br>
+<p style='height: 100px; width: 900px; border: solid 0px black' id="score1"></p>
+
+<script type="text/javascript">
+		var score = parseInt(localStorage.getItem('examTypeF'));
+		document.getElementById('score1').innerHTML = '<font size=8>Ang nakuha mong marka ay '+score+'/10 </font><br/>';
+		
+		if (score >= 8){
+			document.getElementById('score1').innerHTML = '<font size=8><b><blink>Ang nakuha mong marka ay '+score+'/10.</font></blink> <br> <font size=7 color = "blue"> ANG GALING-GALING MO!</b></font><br/>';
+		}else{
+			document.getElementById('score1').innerHTML = '<font size=8><b>Ang nakuha mong marka ay '+score+'/10</font> <br> <font size=7 color = "blue"> Galingan mo pa sa susunod!</b></font><br/>';
+		
+		}
+	</script>
+	<br><br>
+	
+<p><a href="3Pang-uri.html"><input type="button" class="button" value="Ulitin ang Pagsasanay"></a>
+<a href="exercises.html"><input type="button" class="button" value="Pumili ng Ibang Pagsasanay"></a></p>
+</div>
+
+</body>
+</html>

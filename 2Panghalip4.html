@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-6">
+	<title>Exercises</title>
+
+<link rel="stylesheet" type="text/css" href="pagsasanay4.css">
+</head>
+<body background="panghalipbg.jpg">
+<div id="container">
+	<div id="title">
+	<img src="balarila.png">
+	<a href="exercises.html"><button>Mga Pagsasanay</button></a>
+		<a href="001index.html"><button>Home </button></a>
+		
+	</div><div>
+	<script type="text/javascript">
+		function disp(question){
+
+			switch(question){
+				case 'question1':
+					var choices = document.getElementsByName('question1');
+					for(var i=0, length = choices.length; i < length; i++){
+						if(choices[i].checked){
+						var currentScore = localStorage.getItem('examTypeK');
+					        if(choices[i].value == 'Kanino'){
+									var audio = new Audio('happy.mp3');
+				audio.play();
+				localStorage.setItem('examTypeK', parseInt(currentScore) + 1 );
+				document.getElementById('answer1').innerHTML = '<table><tr><td>Resulta:</t></tr><tr><td><img src="picture.png" class="img2"></td></tr><tr><td>Tama ang iyong sagot! Ang salitang Kanino ay tumutukoy sa kanyang sasamahan pag-uwi galing eskuwelahan.</td></tr><tr><td> <a href="2Panghalip5.html"><img src="next.png" class="img3" align="right"></input></a></td></tr></table><br>';
+								break;
+							}else{
+								var audio = new Audio('sad.mp3');
+				audio.play();
+				localStorage.setItem('examTypeK', currentScore);
+				document.getElementById('answer1').innerHTML = '<table><tr><td>Resulta:</t></tr><tr><td><img src="picture1.png" class="img2"></td></tr><tr><td> Mali ang iyong sagot. </td></tr><tr><td><a href="2Panghalip4m.html"><input type="button" class="button1" value="Alamin ang tamang sagot" width=300px></a></td></tr></table> <br /> ';
+							}
+						}
+
+
+					}
+
+					break;
+
+					/*
+					class = document.getElementsByClassName()
+					name = document.getElementsByName()
+					id = document.getElementById()
+					*/
+
+			}
+		}
+	</script>
+<div class="header">
+Pagtukoy sa Angkop na Panghalip na Pananong
+</div>
+<div class="question"><div class="text">
+<P> __________ ka sasama pag-uwi mo galing eskuwelahan?</font><BR>
+<input type="radio" name="question1" value="Ano"> Ano</font><BR>
+<input type="radio" name="question1" value="Kanino"> Kanino</font><BR>
+<input type="radio" name="question1" value="Sino"> Sino</font><BR>
+
+</p></div><center><center>
+<p><input type="button"  class="button"value="Ipasa" onclick="disp('question1')"></p>
+<p style='height: 100px; width: 300px; border: solid 0px black' id="answer1"></p>
+<p>
+</p></div><center><center>
+</body>
+</html>

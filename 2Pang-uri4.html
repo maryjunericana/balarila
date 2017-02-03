@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-6">
+	<title>Exercises</title>
+
+<link rel="stylesheet" type="text/css" href="pagsasanay7.css">
+</head>
+<body background="panguribg.jpg">
+<div id="container">
+	<div id="title">
+	<img src="balarila.png">
+	<a href="exercises.html"><button>Mga Pagsasanay</button></a>
+		<a href="001index.html"><button>Home </button></a>
+		
+	</div><div>
+	<script type="text/javascript">
+		function verify(){
+		
+
+			// check for question 1
+			var answer1 = document.getElementById('question1').value;
+			
+			var answer = document.getElementById('answer');
+			var results = '';
+						var currentScore = localStorage.getItem('examTypeI');
+
+			if(answer1 == 'magkasinggulang'){ 
+					var audio = new Audio('happy.mp3');
+				audio.play();
+								localStorage.setItem('examTypeI', parseInt(currentScore) + 1 );
+
+				document.getElementById('question1');
+								results += '<table><tr><td>Resulta:</t></tr><tr><td><img src="picture.png" class="img2"></td></tr><tr><td>Tama ang iyong sagot! Ang tamang sagot ay magkasinggulang dahil ito ay nasa pasukdol na klasipikasyon.</td></tr><tr><td><a href="2Pang-uri5.html"><img src="next.png" class="img3" align="right"></input></a></td></tr></table><br>'
+			}else if(answer1 == 'Magkasinggulang'){
+				 var audio = new Audio('sad.mp3');
+				audio.play();
+				localStorage.setItem('examTypeI', currentScore);
+				document.getElementById('question1');
+				results += '<table><tr><td>Resulta:</t></tr><tr><td><img src="picture1.png" class="img2"></td></tr><tr><td> Mali. Dapat nasa maliit na titik ang unang letra ng iyong sagot dahil ito ay hindi ang unang salita sa pangungusap.</td></tr><tr><td><a href="2Pang-uri5.html"><img src="next.png" class="img3" align="right"></input></a></td></tr></table><br />.';
+			}else if(answer1 != 'magkasinggulang' || 'Magkasinggulang') {
+				var audio = new Audio('sad.mp3');
+				audio.play();
+				localStorage.setItem('examTypeI', currentScore);
+				document.getElementById('question1');
+				results += '<table><tr><td>Resulta:</t></tr><tr><td><img src="picture1.png" class="img2"></td></tr><tr><td> Mali ang iyong sagot.</td></tr><tr><td><a href="2Pang-uri4m.html"><input type="button" class="button1" value="Alamin ang tamang sagot" width=300px></a></td></tr></table><br />.';
+}
+			answer.innerHTML = results;
+			}
+	</script>
+<div class="header">
+Pagbabanghay ng Pang-uri
+</div>
+<div class="question">
+<font size="5"><i><center> </i></font><P> <center>(gulang)<br>  Pareho tayong ipinanganak sa taong 2003, kaya tayo ay <input type="textbox" id="question1">.
+</p>
+<p><input type="button" class="button" value="Ipasa" onclick="verify()"></p>
+<p style='height: 100px; width: 500px; border: solid 0px black' id="answer"></p>
+
+<p>
+</p></div>
+</body>
+</html>

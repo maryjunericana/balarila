@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-6">
+	<title>Exercises</title>
+
+<link rel="stylesheet" type="text/css" href="pagsasanay6.css">
+</head>
+<body background="panghalipbg.jpg">
+<div id="container">
+	<div id="title">
+	<img src="balarila.png">
+	<a href="exercises.html"><button>Mga Pagsasanay</button></a>
+		<a href="001index.html"><button>Home </button></a>
+		
+	</div><div>
+	<script type="text/javascript">
+		function verify(){
+		
+
+			// check for question 1
+			var answer1 = document.getElementById('question1').value;
+			
+			var answer = document.getElementById('answer');
+			var results = '';
+
+			if(answer1 == 'nila'){ 
+				var audio = new Audio('happy.mp3');
+				audio.play();
+				localStorage.setItem('examTypeH', 1);
+				document.getElementById('question1');
+				results += '<table><tr><td>Resulta:</t></tr><tr><td><img src="picture.png" class="img2"></td></tr><tr><td>Tama ang iyong sagot! Ang salitang "nila" ay isang panghalip na panao.</td></tr><tr><td> <a href="3Panghalip2.html"><img src="next.png" class="img2" align="right"></input></a></td></tr></table><br>';
+			}
+			else if(answer1 == 'Nila'){
+				 var audio = new Audio('sad.mp3');
+				audio.play();
+				localStorage.setItem('examTypeH', 0);
+				document.getElementById('question1');
+				results += '<table><tr><td>Resulta:</t></tr><tr><td><img src="picture1.png" class="img2"></td></tr><tr><td> Mali. Dapat nasa maliit na titik ang unang letra ng iyong sagot dahil ito ay hindi ang unang salita sa pangungusap. </td></tr></table> <br /> ';
+			}else if(answer1 != 'Nila' || 'nila'){
+			var audio = new Audio('sad.mp3');
+				audio.play();
+				localStorage.setItem('examTypeH', 0);
+			document.getElementById('question1');
+				results += '<table><tr><td>Resulta:</t></tr><tr><td><img src="picture1.png" class="img2"></td></tr><tr><td>  Mali ang iyong sagot.</td></tr><tr><td><a href="3Panghalip1m.html"><input type="button" class="button1" value="Alamin ang tamang sagot" width=300px></a></td></tr></table> <br /> ';
+							}
+			answer.innerHTML = results;
+			}
+		
+	</script>
+<div class="header">
+Pagtukoy sa Angkop na Paghalip
+</div>
+<div class="question">
+ <div class="text"><center>
+<P><font size="6"><center> Alam na nila ang sikreto ni Kristel. <br> <input type="textbox" name="question1" id="question1"></font>
+</p></div><center>
+<p><input type="button" class="button" value="Ipasa" onclick="verify()"></p>
+<p style='height: 100px; width: 300px; border: solid 0px black' id="answer"></p>
+<p>
+</p></div>
+</body>
+</html>

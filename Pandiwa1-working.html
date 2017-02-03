@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Balarila</title>
+	<style>
+		#container{
+			margin: 0px auto;
+			border: solid 1px black;
+			overflow: auto;
+			font-family: Century Gothic;
+			font-size: 12px;
+		}
+		/* ID is # */
+		#menu{
+			height: 50px;
+			line-height: 50px;
+			border: solid 1px black;
+			text-align: right;
+			background: yellow;
+		}
+		/* CLASS is . */
+		.item{
+			float: right;
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+		#title{
+			background: orange;
+			height: 40px;
+			line-height: 40px;
+			margin-top: -16px;
+		}
+		#video{
+			text-align: center;
+		}
+		.active{
+			font-weight:bold;
+		}
+	</style>
+</head>
+<body background="pandiwabg.jpg">
+
+	<div id="container">
+		<div id="title">
+			<h1>Balarila</h1>
+		</div>
+		<div id="menu">
+		<style>
+			a:link    {color:black; background-color:transparent; text-decoration:none}
+			a:visited {color:blue; background-color:transparent; text-decoration:none}
+			a:hover   {color:violet; background-color:transparent; text-decoration:underline}
+			a:active  {color:yellow; background-color:transparent; text-decoration:underline}
+		</style>
+			<div class="item"><a href="exercises.html">Mga Pagsasanay</a></div>
+			<div class="item active"><a href="001index.html">Home</a></div>
+		</div>
+		<div>
+	<script type="text/javascript">
+		function disp(){
+			var choices = document.getElementsByName('question1');
+			for(var i=0, length = choices.length; i < length; i++){
+				if(choices[i].checked){
+					if(choices[i].value == 'mag-aalok'){
+						document.getElementById('answer1').innerHTML = 'Resulta: Tama';
+						break;
+					}else{
+						document.getElementById('answer1').innerHTML = 'Resulta: Mali. Ang tamang sagot ay C. mag-aalok dahil ang tinutukoy na pangngalan ng pandiwa ay iisa lamang at ang pinangyarihan ay nasa panghinaharap na aspekto ng pandiwa.';
+					}
+				}
+
+
+			}
+		}
+	</script>
+
+
+<h3><font size="5"><b>Pagsasanay sa Pandiwa</font></b></h3>
+
+
+<font size="5"><i>Piliin ang titik ng tamang sagot. </i></font>
+<P><font size="8">1. Dahil walang aamin sa kung sino ang pumatay sa bata, sa susunod na araw ay ang Mayor ay __________ ng malaking pabuya para sa makakapagturo sa salarin. <br> Aling pandiwa ang pinakaangkop na gamitin?</font><BR>
+<input type="radio" name="question1" value="nag-aalok"><font size="5">nag-aalok</font><BR>
+<input type="radio" name="question1" value="nag-alok"><font size="5">nag-alok</font><BR>
+<input type="radio" name="question1" value="mag-aalok"><font size="5">mag-aalok</font><BR>
+<input type="radio" name="question1" value="nang-alok"><font size="5">nang-alok</font><BR>
+</p>
+<p><input type="button" value="Ipasa" onclick="disp()"></p>
+<p style='height: 100px; width: 300px; border: solid 1px black' id="answer1">Resulta:</p>
+<a href="Pandiwa2.html"><input type="button" name="next" value="Sunod na tanong"></input></a>
+</div>
+</body>
+</html>

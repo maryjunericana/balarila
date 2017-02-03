@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-6">
+	<title>Exercises</title>
+<link rel="stylesheet" type="text/css" href="pagsasanay1.css">
+</head>
+<body background="pangngalanbg.jpg">
+<div id="container">
+	<div id="title">
+	<img src="balarila.png">
+	<a href="exercises.html"><button>Mga Pagsasanay</button></a>
+		<a href="001index.html"><button>Home </button></a>
+		
+	</div><div>
+	<script type="text/javascript">
+	function disp1(){
+				var results = '';
+				var audio = new Audio('happy1.mp3');
+				
+				audio.play();
+				var currentScore = localStorage.getItem('examTypeJ');
+
+				localStorage.setItem('examTypeJ', parseInt(currentScore) + 1 );
+				document.getElementById('answer1').innerHTML = '<table><tr><td> Resulta:</td></tr><tr><td><img src="picture01.png" class="img2"></td></tr><tr><td>Tama ang iyong sagot! Ang pera ay naiiba dahil ang pera ay isang bagay habang ang iba ay mga lugar.</td></tr><tr><td><a href="2Pangngalan10.html"><img src="next.png" class="img3" align="center"></input></a></td></tr></table><br>';
+				}
+	function disp2() {
+				var results = '';
+				var audio = new Audio('sad1.mp3');
+				audio.play();
+				var currentScore = localStorage.getItem('examTypeJ');
+
+
+				localStorage.setItem('examTypeJ', currentScore);
+				document.getElementById('answer1').innerHTML = '<table><tr><td> Resulta:</td></tr><tr><td><img src="picture0112.png" class="img2"></td> </tr><tr><td> Mali ang iyong sagot. </td></tr><tr><td><a href="2Pangngalan9m.html"><input type="button" class="button1" value="Alamin ang tamang sagot" width=300px></a></td></tr></table><br>';
+
+			}
+	</script>
+<div class="header">
+	Pagtukoy sa Naiibang Pangngalan
+</div>
+<div class="question"><center>
+<table>
+<tr>
+<td><input type="image" src="pn81.jpg"  onclick="disp2()" value="paaralan"><BR></td>
+<td><input type="image" src="pn82.jpg"  onclick="disp2()" value="sinehan"><BR></td>
+<td><input type="image" src="pn84.jpg"  onclick="disp1()" value="pera"><BR></td>
+<td><input type="image" src="pn83.jpg"  onclick="disp2()" value="bangko"><BR></td> </tr>
+
+</table>
+</p>
+ 
+<p style='height: 50px; width: 500px; border: solid 0px black' id="answer1"></p>
+<p>
+</p></div>
+</body>
+</html>

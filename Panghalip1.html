@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-6">
+	<title>Exercises</title>
+
+<link rel="stylesheet" type="text/css" href="pagsasanay2.css">
+<style> .indented { text-indent: 30pt; } </style> 
+
+</head>
+<body background="panghalipbg.jpg">
+<div id="container">
+	<div id="title">
+	<img src="balarila.png">
+	<a href="exercises.html"><button>Mga Pagsasanay</button></a>
+		<a href="001index.html"><button>Home </button></a>
+		
+	</div>
+		<div>
+	<script type="text/javascript">
+		function verify(){
+		
+
+			// check for question 1
+			var answer1 = document.getElementById('question1').value;
+			var answer2 = document.getElementById('question2').value;
+			var answer3 = document.getElementById('question3').value;
+	
+			var answers = document.getElementById('answers');
+			var results = '';
+			
+			var currentScore = parseInt(localStorage.getItem('examTypeD'));	
+			
+			 if(answer1 == 'Ako'){
+				var audio = new Audio('happy.mp3');
+				audio.play();
+				if(currentScore < 9){
+					localStorage.setItem('examTypeD', parseInt(currentScore) + 1 );
+				}
+				
+				document.getElementById('question1').style.borderColor = "green";
+				results = results + 'Resulta: <br> <table class="tbl"><tr><td> 1. <img src="picture02.png" class="img2"> </td><td>Tama ang iyong sagot! </td></tr></table><br /> ';
+			}else if(answer1 == 'ako'){
+				var audio = new Audio('sad.mp3');
+				audio.play();
+				
+				var currentScore = parseInt(localStorage.getItem('examTypeD'));	
+				if(currentScore > 0){
+					localStorage.setItem('examTypeD', currentScore - 1);
+				}
+				
+				document.getElementById('question1').style.borderColor = "red";
+				results = results + 'Resulta: <br><table class="tbl"><tr><td>1.<img src="picture13.png" class="img2"></td><td> Mali. Dapat nasa malaking titik ang unang letra ng iyong sagot dahil ito ay ang unang salita sa pangungusap.</td></tr></table> <br /> ';
+			}else if(answer1 != 'Ako'||'ako'){
+				var audio = new Audio('sad.mp3');
+				audio.play();
+				
+				var currentScore = parseInt(localStorage.getItem('examTypeD'));	
+				if(currentScore > 0){
+					localStorage.setItem('examTypeD', currentScore - 1);
+				}
+				
+				document.getElementById('question1').style.borderColor = "red";
+				results = results + 'Resulta: <br><table class="tbl"><tr><td>1.<img src="picture13.png" class="img2"></td><td>Mali ang iyong sagot.</td> <td><a href="Panghalipm.html"><input type="button" class="button1" value="Alamin ang tamang sagot" width=200px height=200px></a></td></tr></table> <br /> ';
+			}
+
+			if(answer2 == 'Sila'){
+			var audio = new Audio('happy.mp3');
+				audio.play();
+				var currentScore = localStorage.getItem('examTypeD');
+				if(currentScore < 9){
+					localStorage.setItem('examTypeD', parseInt(currentScore) + 1 );
+				}
+				document.getElementById('question2').style.borderColor = "green";
+				results = results + '<table class="tbl"><tr><td> 2. <img src="picture02.png" class="img2"> </td><td>Tama ang iyong sagot! </td></tr></table><br /> ';
+			}else if(answer2 == 'sila'){
+				var audio = new Audio('sad.mp3');
+				audio.play();
+				
+				var currentScore = parseInt(localStorage.getItem('examTypeD'));	
+				if(currentScore > 0){
+					localStorage.setItem('examTypeD', currentScore - 1);
+				}
+				
+				document.getElementById('question1').style.borderColor = "red";
+				results = results + '<br><table class="tbl"><tr><td>2.<img src="picture0112.png" class="img2"></td><td> Mali. Dapat nasa malaking titik ang unang letra ng iyong sagot dahil ito ay ang unang salita sa pangungusap.</td></tr></table> <br /> ';
+			}else if(answer2 != 'Sila' || 'sila') {
+				var audio = new Audio('sad.mp3');
+				audio.play();
+				
+				var currentScore = parseInt(localStorage.getItem('examTypeD'));	
+				if(currentScore > 0){
+					localStorage.setItem('examTypeD', currentScore - 1);
+				}
+
+				document.getElementById('question2').style.borderColor = "red";
+				results += '<table class="tbl"><tr><td>2.<img src="picture0112.png" class="img2"></td><td>Mali ang iyong sagot.</td> <td><a href="Panghalip1m.html"><input type="button" class="button1" value="Alamin ang tamang sagot" width=200px height=200px></a></td></tr></table><br />';
+			}
+			
+			if(answer3 == 'kami'){
+			var audio = new Audio('happy.mp3');
+				audio.play();
+				var currentScore = localStorage.getItem('examTypeD');
+				
+				if(currentScore < 9){
+					localStorage.setItem('examTypeD', parseInt(currentScore) + 1 );
+				}
+				document.getElementById('question3').style.borderColor = "green";
+				results = results + '<table class="tbl"><tr><td> 3. <img src="picture.png" class="img2"> </td><td>Tama ang iyong sagot! </td></tr><tr><td><a href="Panghalip2.html"><img src="next.png" class="img3" align="right"></input></a></td></tr></table><br /> ';
+			}else if(answer3 == 'Kami'){
+				var audio = new Audio('sad.mp3');
+				audio.play();
+				
+				var currentScore = parseInt(localStorage.getItem('examTypeD'));	
+				if(currentScore > 0){
+					localStorage.setItem('examTypeD', currentScore - 1);
+				}
+				
+				document.getElementById('question1').style.borderColor = "red";
+				results = results + '<br><table class="tbl"><tr><td>3.<img src="picture1.png" class="img2"></td><td> Mali. Dapat nasa maliit na titik ang unang letra ng iyong sagot dahil ito ay hindi ang unang salita sa pangungusap.</td></tr><tr><td><a href="Panghalip2.html"><img src="next.png" class="img3" align="right"></input></a></td></tr></table> <br /> ';
+			}else if(answer3 != 'Kami' || 'kami'){
+				var audio = new Audio('sad.mp3');
+				audio.play();
+				
+				var currentScore = parseInt(localStorage.getItem('examTypeD'));	
+				if(currentScore > 0){
+					localStorage.setItem('examTypeD', currentScore - 1);
+				}
+				
+				document.getElementById('question3').style.borderColor = "red";
+				results += ' <table class="tbl"><tr><td>3.<img src="picture1.png" class="img2"></td><td>Mali ang iyong sagot.</td> <td><a href="Panghalip1m.html"><input type="button" class="button1" value="Alamin ang tamang sagot" width=200px height=200px></a></td></tr></td></tr></table><br />';
+			}
+				
+			answers.innerHTML = results;
+
+		}
+	</script>
+<div class="header">
+Pagtukoy sa Angkop na Panghalip na Panao
+</div>
+<div class="question">
+<center>
+<table border=1 width=40%>
+<center>
+<tr><td width=100><center><center> Ako</font></td>
+<td width=100><center> Sila</font></td>
+<td width=100><center> Kami</font></td>
+<td width=100><center> Nila</font></td>
+<td width=100><center> Namin</font></td>
+</tr></table> 
+<div class="text">
+
+<P class="indented"> Lani Mendrez ang pangalan ko. (1)<input type="textbox" id="question1" name="question1"> ay nasa ikatlong baitang. Sina Marie at
+Dina ang mga kaibigan ko. (2)<input type="textbox" name="question2" id="question2"> ang aking mga kamag-aral. Tuwing tanghalian,
+pumupunta (3)<input type="textbox" name="question3" id="question3"> sa kantina para kumain nang sabay-sabay.
+
+</p>
+</div>
+<p><input type="button"  class="button"value="Ipasa" onclick="verify()"></p>
+<p style='height: 150px; width: 810px; border: solid 0px black' id="answers"></p>
+</div>
+</body>
+</html>
